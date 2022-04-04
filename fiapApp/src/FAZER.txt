@@ -1,0 +1,8 @@
+1-VER COMO COLOCAR CHECKBOX
+2-VER COMO COLOCAR RADIO Button
+3-Colocar o alert dos dados de dados quando clicar no botão "Cadastrar"
+4-Arrumar CSS
+5-Colocar tipo senha no Login
+6-Revisar
+7-Colocar um Alert no Login
+8-Criar uma tela de "Esqueceu a senha" 
