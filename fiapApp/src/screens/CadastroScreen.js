@@ -4,13 +4,13 @@ import { CheckBox, Image, ImageBackground, Pressable, StyleSheet, Text, TextInpu
 
 
 
-export default function CadastroScreen() {
+export default function CadastroScreen({ navigation }) {
 
     const [isSelected, setSelection] = useState(false);
 
 
     return (
-        <View>
+        <View style={styles.container}>
             <ImageBackground source={require('../../assets/fiap_bg.png')} style={styles.imageBackground}>
                 <Image
                     style={styles.imageFiapLogo}
@@ -48,12 +48,12 @@ export default function CadastroScreen() {
                     onPress={() => setSelected(!isSelected)}
                     value={isSelected}
                     //onValueChange={setSelection}
-                    style={styles.checkbox}
+                    //style={styles.checkbox}
                 />
                 <Pressable style={styles.button}>
                     <Text style={styles.buttonText}>CADASTRAR</Text>
                 </Pressable>
-                <Pressable style={styles.button}>
+                <Pressable style={styles.button} onPress={() => navigation.replace('Login')}>
                     <Text style={styles.buttonText}>VOLTAR</Text>
                 </Pressable>
 
@@ -72,11 +72,12 @@ const styles = StyleSheet.create({
     },
     imageBackground: {
         flex: 1,
-        resizeMode: 'conver',
+        resizeMode: 'cover',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 16,
         height: '100%',
+        width: '100%',
     },
     imageFiapLogo: {
         width: '70%',
@@ -110,10 +111,6 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
-    },
-    checkbox: {
-        width: '40%',
-        alignSelf: "center",
     },
 
 })

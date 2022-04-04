@@ -22,7 +22,8 @@ export default function MainStackNavigator() {
         >
             <Stack.Screen name='Login' component={LoginScreen}
                 options={{ headerShown: false }} />
-            <Stack.Screen name='Cadastro' component={CadastroScreen} />
+            <Stack.Screen name='Cadastro' component={CadastroScreen}
+                options={{ headerShown: false }} />
         </Stack.Navigator>
 
 
