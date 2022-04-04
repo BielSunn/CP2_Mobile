@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Image, ImageBackground, Linking, Pressable, StyleSheet, Text, TextInput, View } from 'react-native-web';
+import { Button, Image, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native-web';
 
 
 
@@ -18,6 +18,7 @@ export default function LoginScreen({ navigation }) {
 
                 />
                 <TextInput
+                    secureTextEntry={true}
                     placeholder='Senha'
                     style={styles.textInput}
                 />
@@ -91,7 +92,9 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 'bold',
         color: 'white',
-    }
+        //marginRight: 300,
+        paddingRight: 300
+    },
 })
 
 

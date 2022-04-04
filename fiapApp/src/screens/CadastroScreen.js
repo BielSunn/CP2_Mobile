@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
-import { CheckBox, Image, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native-web';
+import { Image, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native-web';
+import RadioForm, {
+    RadioButton,
+    RadioButtonInput,
+    RadioButtonLabel,
+} from 'react-native-simple-radio-button';
 
 
 
+var sexo = [
+    { label: 'Masculino', value: 0 },
+    { label: 'Feminino', value: 1 },
+]
 
 export default function CadastroScreen({ navigation }) {
 
     const [isSelected, setSelection] = useState(false);
+    const [male, setMale] = useState(false);
+    const [female, setFemale] = useState(false);
+    const [name, setName] = useState("");
+    const [gender, setGender] = useState("");
+
 
 
     return (
@@ -19,6 +33,8 @@ export default function CadastroScreen({ navigation }) {
                 <Text style={styles.textCadastrar}>Cadastrar</Text>
                 <TextInput
                     placeholder='Username'
+                    value={name}
+                    onChangeText={(value) => setName(value)}
                     style={styles.textInput}
                 />
                 <TextInput
@@ -35,21 +51,24 @@ export default function CadastroScreen({ navigation }) {
                     placeholder='Confirmar Senha'
                     style={styles.textInput}
                 />
-                <CheckBox
-                    title="Li e concordo com o termo de uso"
+
+                <RadioForm
+                    radio_props={sexo}
+                    intial={0}
+                    onPress={(value) => { console.log(value)}}
+
+                    buttonSize={10}
+                    buttonOuterSize={30}
+                    selectedButtonColor={'#ee125a'}
+                    selectedLabelColor={'white'}
+                    labelColor={'white'}
+                    buttonColor={'white'}
+                    labelStyle= {{fontSize: 20,}}
+                    style={styles.radioButton}
                 />
-                <CheckBox
-                    title="Aceito receber emails"
-                    checkedIcon="check"
-                    uncheckedIcon="square-o"
-                    checkedColor="green"
-                    uncheckedColor="red"
-                    checked={isSelected}
-                    onPress={() => setSelected(!isSelected)}
-                    value={isSelected}
-                    //onValueChange={setSelection}
-                    //style={styles.checkbox}
-                />
+
+
+
                 <Pressable style={styles.button}>
                     <Text style={styles.buttonText}>CADASTRAR</Text>
                 </Pressable>
@@ -112,5 +131,38 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
     },
+    radioButton: {
+        display: 'block',
+        width: 200,
+        marginLeft: 0,
+    },
 
 })
+
+
+
+/*
+<CheckBox
+title="Li e concordo com o termo de uso"
+/>
+<CheckBox
+title="Aceito receber emails"
+checkedIcon="check"
+uncheckedIcon="square-o"
+checkedColor="green"
+uncheckedColor="red"
+checked={isSelected}
+onPress={() => setSelected(!isSelected)}
+value={isSelected}
+//onValueChange={setSelection}
+//style={styles.checkbox}
+/>
+<CheckBox
+title="Male"
+center
+checked={male}
+checkedIcon="dot-circle-o"
+uncheckedIcon="circle-o"
+onPress={genderMale}
+/>
+*/
