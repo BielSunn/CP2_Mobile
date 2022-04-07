@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { Image, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native-web';
+
+import { 
+    Alert, 
+    Image, 
+    ImageBackground, 
+    Pressable, 
+    StyleSheet, 
+    Text, 
+    TextInput, 
+    View 
+} from 'react-native';
+
 import RadioForm, {
     RadioButton,
     RadioButtonInput,
@@ -7,21 +18,36 @@ import RadioForm, {
 } from 'react-native-simple-radio-button';
 
 
+import Checkbox from 'expo-checkbox';
 
+//import { RadioButton } from 'react-native-paper';
+
+/*
 var sexo = [
-    { label: 'Masculino', value: 0 },
-    { label: 'Feminino', value: 1 },
+    { label: 'Masculino', value: 'Masculino' },
+    { label: 'Feminino', value: 'Feminino' },
 ]
+*/
+
 
 export default function CadastroScreen({ navigation }) {
 
-    const [isSelected, setSelection] = useState(false);
-    const [male, setMale] = useState(false);
-    const [female, setFemale] = useState(false);
+    const [userName, setUserName] = useState("");
     const [name, setName] = useState("");
-    const [gender, setGender] = useState("");
+    const [senha, setSenha] = useState("");
+    const [genero, setGenero] = useState("Masculino");
+
+    function cadastro() {
+        alert("Username: " + userName)
+        alert("Name: " + name);
+        alert("Senha: " + senha);
+        alert("Gênero: " + genero);
+        Alert.alert("Teste", "Texto")
+    }
 
 
+    const [isChecked1, setChecked1] = useState(false);
+    const [isChecked2, setChecked2] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -33,43 +59,72 @@ export default function CadastroScreen({ navigation }) {
                 <Text style={styles.textCadastrar}>Cadastrar</Text>
                 <TextInput
                     placeholder='Username'
-                    value={name}
-                    onChangeText={(value) => setName(value)}
+                    value={userName}
+                    onChangeText={(value) => setUserName(value)}
                     style={styles.textInput}
                 />
                 <TextInput
                     placeholder='Nome Completo'
                     style={styles.textInput}
+                    value={name}
+                    onChangeText={text => setName(text)}
                 />
                 <TextInput
                     secureTextEntry={true}
                     placeholder='Senha'
                     style={styles.textInput}
+                    onChangeText={text => setSenha(text)}
                 />
                 <TextInput
                     secureTextEntry={true}
                     placeholder='Confirmar Senha'
                     style={styles.textInput}
+
+
+
+                    onChangeText={text => setSenha(text)}
                 />
 
-                <RadioForm
-                    radio_props={sexo}
-                    intial={0}
-                    onPress={(value) => { console.log(value)}}
+                <Text style={styles.sexo}>Sexo</Text>
 
-                    buttonSize={10}
-                    buttonOuterSize={30}
+                <RadioForm
+                    radio_props={[
+                        { label: 'Masculino', value: 'Masculino' },
+                        { label: 'Feminino', value: 'Feminino' },
+                    ]}
+                    intial={0}
+                    onPress={(value) => { setGenero(value) }}
+
+                    buttonSize={5}
+                    buttonOuterSize={25}
                     selectedButtonColor={'#ee125a'}
                     selectedLabelColor={'white'}
                     labelColor={'white'}
                     buttonColor={'white'}
-                    labelStyle= {{fontSize: 20,}}
+                    labelStyle={{ fontSize: 20, }}
                     style={styles.radioButton}
                 />
 
 
+                <Checkbox
+                    style={styles.checkbox}
+                    value={isChecked1}
+                    onValueChange={setChecked1}
+                    color={isChecked1 ? '#ee125a' : undefined}
+                />
 
-                <Pressable style={styles.button}>
+                <Text style={styles.paragraph}>Li e concordo com o termo de uso</Text>
+
+                <Checkbox
+                    style={styles.checkbox}
+                    value={isChecked2}
+                    onValueChange={setChecked2}
+                    color={isChecked2 ? '#ee125a' : undefined}
+                />
+                <Text style={styles.paragraph}>Aceito Receber emails</Text>
+
+
+                <Pressable style={styles.button} onPress={() => cadastro()}>
                     <Text style={styles.buttonText}>CADASTRAR</Text>
                 </Pressable>
                 <Pressable style={styles.button} onPress={() => navigation.replace('Login')}>
@@ -105,15 +160,17 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     textCadastrar: {
-        fontSize: 14,
+        fontSize: 30,
         fontWeight: 'bold',
         color: 'white',
+        marginBottom: 16,
     },
     textInput: {
         width: '100%',
         height: 40,
-        backgroundColor: '#d3d3d3',
+        backgroundColor: '#C0C0C0',
         //borderRadius: 20,
+        fontSize: 18,
         paddingHorizontal: 16,
         marginBottom: 8,
     },
@@ -131,38 +188,33 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
     },
+    sexo: {
+        fontSize: 20,
+        color: 'white',
+        //marginRight: '90%'
+        marginRight: 0,
+        marginLeft: 0,
+    },
     radioButton: {
         display: 'block',
         width: 200,
+        //marginRight: '50%',
+        marginRight: 0,
         marginLeft: 0,
+    },
+    section: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    paragraph: {
+        fontSize: 15,
+        color: 'white',
+    },
+    checkbox: {
+        margin: 8,
     },
 
 })
 
 
 
-/*
-<CheckBox
-title="Li e concordo com o termo de uso"
-/>
-<CheckBox
-title="Aceito receber emails"
-checkedIcon="check"
-uncheckedIcon="square-o"
-checkedColor="green"
-uncheckedColor="red"
-checked={isSelected}
-onPress={() => setSelected(!isSelected)}
-value={isSelected}
-//onValueChange={setSelection}
-//style={styles.checkbox}
-/>
-<CheckBox
-title="Male"
-center
-checked={male}
-checkedIcon="dot-circle-o"
-uncheckedIcon="circle-o"
-onPress={genderMale}
-/>
-*/

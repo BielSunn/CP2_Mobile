@@ -22,17 +22,15 @@ export default function LoginScreen({ navigation }) {
                     placeholder='Senha'
                     style={styles.textInput}
                 />
-                <Button
-                    title='ENTRAR: BUTTON'
-                    //onPress={() => navigation.replace}
-                    style={styles.button}
-                />
+
                 <Pressable style={styles.button}>
-                    <Text style={styles.buttonText}>ENTRAR: PRESSABLE</Text>
+                    <Text style={styles.buttonText}>ENTRAR</Text>
                 </Pressable>
-                <Text onPress={() => navigation.replace('Cadastro')} style={styles.textCadastrar}>
-                    Cadastrar
-                </Text>
+                <Text onPress={() => navigation.replace('Cadastro')} style={styles.textCadastrar}>Cadastrar</Text>
+
+                <Text style={styles.textEsqueceuSenha}>Esqueceu a senha</Text>
+
+
 
             </ImageBackground>
         </View>
@@ -62,9 +60,10 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     textEntrar: {
-        fontSize: 26,
+        fontSize: 30,
         fontWeight: 'bold',
         color: 'white',
+        paddingVertical: 32,
     },
     textInput: {
         width: '100%',
@@ -72,7 +71,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#d3d3d3',
         //borderRadius: 20,
         paddingHorizontal: 16,
+        paddingVertical: 16,
         marginBottom: 8,
+        fontSize: 18,
     },
     button: {
         alignItems: 'center',
@@ -87,14 +88,23 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
+        font: 'Gotham HTF Bold',
     },
     textCadastrar: {
-        fontSize: 14,
+        fontSize: 15,
         fontWeight: 'bold',
         color: 'white',
-        //marginRight: 300,
-        paddingRight: 300
+        //marginRight: '90%',
+        left: 0,
+        paddingVertical: 32,
     },
+    textEsqueceuSenha: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: 'white',
+        //paddingVertical: 32
+        //marginLeft: '90%'
+    }
 })
 
 
