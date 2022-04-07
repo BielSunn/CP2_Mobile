@@ -1,8 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+//import { StyleSheet} from 'react-native';
 import MainStackNavigator from './src/navigation/StackNavigator';
-import LoginScreen from './src/screens/LoginScreen';
 
 export default function App() {
   return (
@@ -12,6 +10,7 @@ export default function App() {
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -20,3 +19,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/

@@ -42,7 +42,16 @@ export default function CadastroScreen({ navigation }) {
         alert("Name: " + name);
         alert("Senha: " + senha);
         alert("Gênero: " + genero);
-        Alert.alert("Teste", "Texto")
+    }
+
+    function cadastroAlertTeste() {
+        Alert.alert(
+        "Sucesso",
+        "Username: " + userName,
+        "Name: " + name,
+        "Senha: " + senha,
+        "Gênero: " + genero
+        )
     }
 
 
@@ -80,8 +89,6 @@ export default function CadastroScreen({ navigation }) {
                     placeholder='Confirmar Senha'
                     style={styles.textInput}
 
-
-
                     onChangeText={text => setSenha(text)}
                 />
 
@@ -104,7 +111,6 @@ export default function CadastroScreen({ navigation }) {
                     labelStyle={{ fontSize: 20, }}
                     style={styles.radioButton}
                 />
-
 
                 <Checkbox
                     style={styles.checkbox}
@@ -154,7 +160,7 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     imageFiapLogo: {
-        width: '70%',
+        width: '60%',
         height: '10%',
         margin: 16,
         resizeMode: 'contain',
@@ -163,7 +169,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'white',
-        marginBottom: 16,
+        marginBottom: 20,
     },
     textInput: {
         width: '100%',
@@ -182,7 +188,7 @@ const styles = StyleSheet.create({
         //borderRadius: 20,
         elevation: 3,
         backgroundColor: '#ee125a',
-        marginTop: 8,
+        marginTop: 25,
         width: '100%',
     },
     buttonText: {

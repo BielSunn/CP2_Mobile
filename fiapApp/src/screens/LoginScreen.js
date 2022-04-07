@@ -1,5 +1,13 @@
 import React from 'react';
-import { Button, Image, ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from 'react-native-web';
+import {
+    Image,
+    ImageBackground,
+    Pressable,
+    StyleSheet,
+    Text,
+    TextInput,
+    View
+} from 'react-native-web';
 
 
 
@@ -29,8 +37,6 @@ export default function LoginScreen({ navigation }) {
                 <Text onPress={() => navigation.replace('Cadastro')} style={styles.textCadastrar}>Cadastrar</Text>
 
                 <Text style={styles.textEsqueceuSenha}>Esqueceu a senha</Text>
-
-
 
             </ImageBackground>
         </View>
@@ -106,12 +112,3 @@ const styles = StyleSheet.create({
         //marginLeft: '90%'
     }
 })
-
-
-/*
-<Button 
-title='ENTRAR'
-//onPress={() => navigation.replace}
-style={styles.button}
-/>
-*/
