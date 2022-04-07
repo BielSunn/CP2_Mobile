@@ -1,26 +1,15 @@
+Instalar o Expo:
+• npm install -g expo-cli
+-------------------------------------------------------------------------------
 pacotes do react-navigation
 • npm install @react-navigation/native @react-navigation/native-stack
 • npm install react-native-screens react-native-safe-area-context
 
 -------------------------------------------------------------------------------
-react-native-simple-radio-button
+Radio Button: react-native-simple-radio-button
+
 • npm install react-native-simple-radio-button --save
 
-https://www.youtube.com/watch?v=KPFoVklyyxA (VÍDEO RADIO BUTTON)
-https://www.npmjs.com/package/react-native-simple-radio-button
-
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 checkbox
-• npm install react-native-custom-checkbox
-• npm : npm i react-native-vector-icons
-
 • expo install expo-checkbox
-
-https://www.youtube.com/watch?v=mvIXtPLnog0 (VÍDEO CHECKBOX)
-
-https://www.youtube.com/watch?v=tDkhWXSnKEU
-
--------------------------------------------------------------------------------
-React Native Paper
-
-• npm install react-native-paper --save
