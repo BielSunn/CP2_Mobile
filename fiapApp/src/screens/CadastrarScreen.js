@@ -44,7 +44,7 @@ export default function CadastroScreen({ navigation }) {
             "Gênero: " + genero)
     }
 
-    function cadastroAlertTeste() {
+    function cadastroAlert() {
         Alert.alert("Sucesso",
             "\nUsername: " + userName +
             "\nName: " + name +
@@ -128,7 +128,7 @@ export default function CadastroScreen({ navigation }) {
                 <Text style={styles.paragraph}>Aceito Receber emails</Text>
 
 
-                <Pressable style={styles.button} onPress={() => cadastro()}>
+                <Pressable style={styles.button} onPress={() => cadastroAlert()}>
                     <Text style={styles.buttonText}>CADASTRAR</Text>
                 </Pressable>
                 <Pressable style={styles.button} onPress={() => navigation.replace('Login')}>
