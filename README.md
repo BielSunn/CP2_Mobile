@@ -23,8 +23,9 @@ Projeto utilizando React Native para criação de uma página de Login e Cadastr
 # Diagrama do projeto
 <p>Imagens de alguns gráficos gerados no projeto.</p>
   <p align="center">
-    <img width="500" src="imgs/grafico1.png">
-    <img width="500" src="imgs/grafico2.png">
+    <img width="300" src="imgs/print_1.png">
+    <img width="300" src="imgs/print_2.png">
+    <img width="300" src="imgs/print_4.png">
 </p>
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------- 
@@ -57,8 +58,6 @@ expo install expo-checkbox
 ```
 git clone https://github.com/BielSunn/CP2_Mobile.git
 ```
----------------------------------------------------------------------------------------------------------------------------------------------------- 
-# Link de vídeo demonstração
 ---------------------------------------------------------------------------------------------------------------------------------------------------- 
 # Referências
 
