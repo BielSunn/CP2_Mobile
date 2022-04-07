@@ -7,7 +7,7 @@ import {
     Text,
     TextInput,
     View
-} from 'react-native-web';
+} from 'react-native';
 
 
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: '100%',
         width: '100%',
-        padding: 16,
+        //padding: 16,
     },
     imageFiapLogo: {
         width: '70%',
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: 'white',
+
         paddingVertical: 32,
     },
     textInput: {
@@ -76,8 +77,8 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: '#d3d3d3',
         //borderRadius: 20,
-        paddingHorizontal: 16,
-        paddingVertical: 16,
+        //paddingHorizontal: 16,
+        // paddingVertical: 16,
         marginBottom: 8,
         fontSize: 18,
     },
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: 'white',
-        font: 'Gotham HTF Bold',
+        //fontFamily: 'Verdana, Arial, Helvetica, sans-serif,
     },
     textCadastrar: {
         fontSize: 15,

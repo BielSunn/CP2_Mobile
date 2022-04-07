@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-import { 
-    Alert, 
-    Image, 
-    ImageBackground, 
-    Pressable, 
-    StyleSheet, 
-    Text, 
-    TextInput, 
-    View 
+import {
+    Alert,
+    Image,
+    ImageBackground,
+    Pressable,
+    StyleSheet,
+    Text,
+    TextInput,
+    View
 } from 'react-native';
 
 import RadioForm, {
@@ -38,20 +38,18 @@ export default function CadastroScreen({ navigation }) {
     const [genero, setGenero] = useState("Masculino");
 
     function cadastro() {
-        alert("Username: " + userName)
-        alert("Name: " + name);
-        alert("Senha: " + senha);
-        alert("Gênero: " + genero);
+        alert("Username: " + userName + "\n" +
+            "Name: " + name + "\n" +
+            "Senha: " + senha + "\n" +
+            "Gênero: " + genero)
     }
 
     function cadastroAlertTeste() {
-        Alert.alert(
-        "Sucesso",
-        "Username: " + userName,
-        "Name: " + name,
-        "Senha: " + senha,
-        "Gênero: " + genero
-        )
+        Alert.alert("Sucesso",
+            "\nUsername: " + userName +
+            "\nName: " + name +
+            "\nSenha: " + senha +
+            "\nGênero: " + genero)
     }
 
 
@@ -155,7 +153,7 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 16,
+        //padding: 16,
         height: '100%',
         width: '100%',
     },
@@ -202,7 +200,7 @@ const styles = StyleSheet.create({
         marginLeft: 0,
     },
     radioButton: {
-        display: 'block',
+        display: 'flex',
         width: 200,
         //marginRight: '50%',
         marginRight: 0,
